@@ -25,7 +25,7 @@ class YandexMaps extends \yii\base\Widget{
     public function init(){
         parent::init();
         foreach (ArrayHelper::toArray($this) as $k=>$v){
-            $this->_options[$k] = is_array($v)?ArrayHelper::merge($this->_options[$k],$v):$v;
+            $this->_options[$k] = is_array($v)?array_merge($this->_options[$k],$v):$v;
         }
         $this->registerClientScript();
     }
